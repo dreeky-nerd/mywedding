@@ -15,6 +15,9 @@
     <link href="styles/main.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Gamja+Flower|Gugi|Noto+Serif+KR|Stylish|Sunflower:300"
           rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/hanna.css"
+    rel="stylesheet">
+          
 
     <!-- Remember to include jQuery :) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
@@ -55,32 +58,46 @@
                 //현재 스크롤 위치(st)를 마지막 위치로 업데이트
                 lastScroll = st;
             });
-   
-
+            $('[id$=mo').click(function(event) {
+                $("[id$=btn]").html("복사");
+                $("[id$=btn]").attr("disabled",false);
+                $(this).modal({
+                    escapeClose: false,
+                    clickClose: false,
+                    showClose: true
+                });
+            });
         });
         function copy_to_clipboard(val) {    
             var copyText = undefined;
-            if(val == "g") copyText = document.getElementById('groom-input');
-            else copyText = document.getElementById('bride-input');
+
+            if(val == "g") {
+                copyText = document.getElementById('groom-input');
+            } else if(val == "gg"){
+                copyText = document.getElementById('2groom-input');
+            } else if(val == "b"){
+                copyText = document.getElementById('bride-input');
+            } else if(val == "bb"){
+                copyText = document.getElementById('2bride-input');
+            } 
+                
             copyText.select();
             copyText.setSelectionRange(0, 99999);
             document.execCommand("Copy");
             if(val == "g") {
                 $("#groom-btn").html("완료");
                 $("#groom-btn").attr("disabled",true);
-            } else {
+            } else if(val == "gg") {
+                $("#2groom-btn").html("완료");
+                $("#2groom-btn").attr("disabled",true);
+            } else if(val == "b") {
                 $("#bride-btn").html("완료");
                 $("#bride-btn").attr("disabled",true);
+            } else if(val == "bb") {
+                $("#2bride-btn").html("완료");
+                $("#2bride-btn").attr("disabled",true);
             }
         }
-        $("#groom,#bride").modal({
-                escapeClose: false,
-                clickClose: false,
-                showClose: false
-            });
-
-
-
     </script>
 </head>
 
@@ -97,9 +114,9 @@
                         [ WE ARE GOING TO TIE THE KNOT ]
                     </p>
                     <p class="h2 mt-5 ww-title"
-                       style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-1px">
-                        <b style="font-size:1.4em;">2020. 06. 05. SAT PM 12:00</b>
-                        <br>서울 헤리츠 컨벤션 5층 프로메사홀
+                       style="font-family: 'Hanna', serif; font-size:1.0em; letter-spacing:-1px">
+                        <b style="font-size:1.4em;">2 0 2 0. 0 6. 0 5. SAT P M 1 2 : 0 0</b>
+                        <br>서 울 헤 리 츠 컨 벤 션 5 층 프 로 메 사 홀
                     </p>
                 </div>
             </div>
@@ -113,7 +130,7 @@
         </div>
         <div class="ww-section" id="couple">
             <div class="container">
-                <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">Groom & Bride</h2>
+                <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Hanna', serif;">Groom & Bride</h2>
                 <div class="row text-center">
                     <div class="col-md-12">
                         <img alt="Wedding Party" class="img-fluid" src="images/invite.PNG"/>
@@ -135,9 +152,9 @@
         </div>
         <div class="ww-section bg-light" id="events">
             <div class="container ww-wedding-event">
-                <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">초대합니다</h2>
+                <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Hanna', serif;">초대합니다</h2>
                     <div class="col text-center mb-5">
-                        <h6 style="font-family: 'Noto Serif KR', serif;">
+                        <h6 style="font-family: 'Hanna', serif;">
                             따뜻한 6월, 축복이 가득하기를 바랍니다.
                         </h6>
                     </div>
@@ -166,7 +183,7 @@
             </div>
         </div>
         <div class="ww-section" id="gallery">
-            <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">사진</h2>
+            <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Hanna', serif;">사진</h2>
             <div class="ww-photo-gallery">
                 <div id="content">
                     <div id="view">
@@ -186,10 +203,10 @@
         <div class="ww-section ww-rsvp-detail" id="map">
             <div class="container">
                 <div class="col text-center">
-                    <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">오시는 길</h2>
+                    <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Hanna', serif;">오시는 길</h2>
                     <div>
-                        <h5 style="font-family: 'Noto Serif KR', serif;">서울 헤리츠 컨벤션 5층 프로메사홀</h5>
-                        <h6 style="font-family: 'Noto Serif KR', serif;">(서울특별시 강남구 논현동 215)</h6>
+                        <h5 style="font-family: 'Hanna', serif;">서울 헤리츠 컨벤션 5층 프로메사홀</h5>
+                        <h6 style="font-family: 'Hanna', serif;">(서울특별시 강남구 논현동 215)</h6>
                     </div>
                 </div>
 
@@ -210,7 +227,7 @@
                             </a>
                         </div>
                         <div class="col text-center">
-                            <label style="font-family: 'Noto Serif KR', serif; font-size: 15px;">
+                            <label style="font-family: 'Hanna', serif; font-size: 15px;">
                                 학동역 3번출구 도보 3분 거리에 있으며, 주차공간이 협소합니다.
                             </label>
                         </div>
@@ -226,15 +243,32 @@
         <div class="ww-section" id="gift">
             <div class="container">
                 <div class="col text-center">
-                    <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">마음 전하는 곳</h2>
-                    <div>
-                        <h5 style="font-family: 'Noto Serif KR', serif;">소중한 마음...</h5></h5>
-                    </div>
+                    <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Hanna', serif;">참석이 어려운 분들은</h2>
+                    <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Hanna', serif;">축하의 마음을 전해주세요</h2>
                 </div>
-                <div class="col text-center">
-                    <!-- Link to open the modal -->
-                    <a href="#ex1" rel="modal:open" id="groom">신랑</a>
-                    <a href="#ex2" rel="modal:open" id="bride">신부</a>
+                <div class="row">
+                    <div class="col-sm-6 t">
+                      <div class="card">
+                        <div class="card-body text-center">
+                          <h5 class="card-title">신랑측</h5>
+                          <a href="#ex1" class="btn btn-primary"  id="1mo">신랑 이동규</a>
+                          <br/>
+                          <br/>
+                          <a href="#ex2" class="btn btn-primary" id="2mo">혼주 이진녕, 남금희</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="card">
+                        <div class="card-body text-center">
+                          <h5 class="card-title">신부측</h5>
+                          <a href="#ex3" class="btn btn-primary" id="3mo">신부 신은숙</a>
+                          <br/>
+                          <br/>
+                          <a href="#ex4" class="btn btn-primary"  id="4mo">혼주 (故)신동길, 전달순</a>
+                        </div>
+                      </div>
+                    </div>
                 </div>
                 <!-- Modal HTML embedded directly into document -->
                 <div id="ex1" class="modal">
@@ -248,8 +282,24 @@
                 <div id="ex2" class="modal">
                     <div class="col text-center">
                         <p>
-                            신한은행 <input id="bride-input" value="111-111-111111" readonly/>  
+                            신한은행 <input id="2groom-input" value="222-111-111111" readonly/>  
+                            <button id="2groom-btn" class="btn btn-sm btn-info" onclick="copy_to_clipboard('gg')">복사</button>
+                        </p>
+                    </div>
+                </div>
+                <div id="ex3" class="modal">
+                    <div class="col text-center">
+                        <p>
+                            신한은행 <input id="bride-input" value="333-111-111111" readonly/>  
                             <button id="bride-btn" class="btn btn-sm btn-info" onclick="copy_to_clipboard('b')">복사</button>
+                        </p>
+                    </div>
+                </div>
+                <div id="ex4" class="modal">
+                    <div class="col text-center">
+                        <p>
+                            신한은행 <input id="2bride-input" value="444-111-111111" readonly/>  
+                            <button id="2bride-btn" class="btn btn-sm btn-info" onclick="copy_to_clipboard('bb')">복사</button>
                         </p>
                     </div>
                 </div>
