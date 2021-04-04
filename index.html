@@ -55,8 +55,29 @@
                 //현재 스크롤 위치(st)를 마지막 위치로 업데이트
                 lastScroll = st;
             });
-        });
+   
 
+        });
+        function copy_to_clipboard(val) {    
+            var copyText = undefined;
+            if(val == "g") copyText = document.getElementById('groom-input');
+            else copyText = document.getElementById('bride-input');
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            document.execCommand("Copy");
+            if(val == "g") {
+                $("#groom-btn").html("완료");
+                $("#groom-btn").attr("disabled",true);
+            } else {
+                $("#bride-btn").html("완료");
+                $("#bride-btn").attr("disabled",true);
+            }
+        }
+        $("#groom,#bride").modal({
+                escapeClose: false,
+                clickClose: false,
+                showClose: false
+            });
 
 
 
@@ -149,20 +170,13 @@
             <div class="ww-photo-gallery">
                 <div id="content">
                     <div id="view">
-                      <img src="https://picsum.photos/1200/800/?random" alt="" />
+                      <img src="images/1.jpg" alt="" />
                     </div>
                     <div id="thumbs">
                         <div id="nav-left-thumbs"><</div>
                         <div id="pics-thumbs">
-                            <img src="https://picsum.photos/1024/768/?random" alt="Nature1" />
-                            <img src="https://picsum.photos/1024/767/?random" alt="Nature2" />
-                            <img src="https://picsum.photos/768/1024/?random" alt="Nature3" />
-                            <img src="https://picsum.photos/1023/768/?random" alt="Nature4" />
-                            <img src="https://picsum.photos/1024/769/?random" alt="Nature5" />
-                            <img src="https://picsum.photos/767/1024/?random" alt="Nature6" />
-                            <img src="https://picsum.photos/1021/768/?random" alt="Nature7" />
-                            <img src="https://picsum.photos/766/1024/?random" alt="Nature8" />
-                            <img src="https://picsum.photos/1023/768/?random" alt="Nature9" />
+                            <img src="images/2.jpg" alt="Nature1" />
+                            <img src="images/1.jpg" alt="Nature2" />
                         </div>
                         <div id="nav-right-thumbs">></div>
                     </div>
@@ -217,15 +231,27 @@
                         <h5 style="font-family: 'Noto Serif KR', serif;">소중한 마음...</h5></h5>
                     </div>
                 </div>
-                <!-- Link to open the modal -->
-                <p><a href="#ex1" rel="modal:open">신랑</a></p>
-                <p><a href="#ex2" rel="modal:open">신부</a></p>
+                <div class="col text-center">
+                    <!-- Link to open the modal -->
+                    <a href="#ex1" rel="modal:open" id="groom">신랑</a>
+                    <a href="#ex2" rel="modal:open" id="bride">신부</a>
+                </div>
                 <!-- Modal HTML embedded directly into document -->
                 <div id="ex1" class="modal">
-                    <p>110-248-981570 신한은행</p>
+                    <div class="col text-center">
+                        <p>
+                            신한은행 <input id="groom-input" value="111-111-111111" readonly/>  
+                            <button id="groom-btn" class="btn btn-sm btn-info" onclick="copy_to_clipboard('g')">복사</button>
+                        </p>
+                    </div>
                 </div>
                 <div id="ex2" class="modal">
-                    <p>Thanks for clicking. That felt good.</p>
+                    <div class="col text-center">
+                        <p>
+                            신한은행 <input id="bride-input" value="111-111-111111" readonly/>  
+                            <button id="bride-btn" class="btn btn-sm btn-info" onclick="copy_to_clipboard('b')">복사</button>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

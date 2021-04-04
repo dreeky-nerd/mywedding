@@ -10111,3 +10111,19 @@ body {
   height: 75px;
   transition-duration: .5s;
 }
+
+.modal input{
+    border: none;
+    font-size: 15px;
+    outline: none;
+    text-align: center;
+}
+.modal button{
+    border:none;
+    width:60px;
+    max-width: 100px;
+    vertical-align: bottom;
+}
+.modal button img{
+    width: 100%;
+}
