@@ -9797,10 +9797,10 @@ body {
 
 .ww-home-page:before {
     content: "";
-    background-color: rgb(119 210 245 / 20%);
+    /* background-color: rgb(119 210 245 / 20%); */
     width: 100%;
     height: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     min-height: 480px;
     position: absolute;
     left: 0;
