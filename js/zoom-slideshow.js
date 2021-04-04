@@ -127,7 +127,7 @@
 							{ height: (_img.height / me._opt.zoomLevel) + 'px' },
 							500,
 							function() {
-								$(img).width(_img.width / me._opt.zoomLevel)
+								$(img).width(500)
 									  .fadeIn('slow');
 							}
 						);
