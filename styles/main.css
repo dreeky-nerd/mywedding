@@ -68,6 +68,8 @@ body {
     color: #212529;
     text-align: left;
     background-color: #fff;
+    position: relative;
+    height: 100%;
 }
 
 
@@ -9795,17 +9797,7 @@ body {
     }
 }
 
-.ww-home-page:before {
-    content: "";
-    /* background-color: rgb(119 210 245 / 20%); */
-    width: 100%;
-    height: 100%;
-    /* height: 100vh; */
-    min-height: 480px;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
+
 
 /* Nav Bar Style */
 .ww-nav-bar .heart {
@@ -10127,3 +10119,35 @@ body {
 .modal button img{
     width: 100%;
 }
+.swiper-container {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .gallery-top {
+    height: 80%;
+    width: 100%;
+  }
+
+  .gallery-thumbs {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+  }
+
+  .gallery-thumbs .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+  }
+
+  .gallery-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+  }
