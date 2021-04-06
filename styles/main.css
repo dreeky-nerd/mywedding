@@ -10017,7 +10017,7 @@ body {
 }
 
 .ww-section {
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 .btn-primary {
@@ -10150,13 +10150,13 @@ body {
 
 .gallery-top {
   height: 80%;
-  width: 100%;
+  width: 95%;
 }
 
 .gallery-thumbs {
   height: 20%;
   box-sizing: border-box;
-  padding: 10px 0;
+  padding: 10px 0 !important;
 }
 
 .gallery-thumbs .swiper-slide {
