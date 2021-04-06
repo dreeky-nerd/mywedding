@@ -10144,8 +10144,9 @@ body {
 }
 
 .swiper-slide {
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .gallery-top {
@@ -10155,8 +10156,7 @@ body {
 
 .gallery-thumbs {
   height: 20%;
-  box-sizing: border-box;
-  padding: 10px 0 !important;
+  box-sizing: border-box;  
 }
 
 .gallery-thumbs .swiper-slide {
